@@ -92,12 +92,12 @@ class Script(scripts.Script):
                         # perhaps there is no user to train Text Encoder only, Weight A is U-Net
                         # The name of label will be changed in future (Weight A and B), but UNet and TEnc for now for easy understanding
                         with gr.Column() as col:
-                            weight = gr.Slider(label=f"Weight {i+1}", value=1.0, minimum=-3.0, maximum=3.0, step=0.05, visible=True)
+                            weight = gr.Slider(label=f"3x Weight {i+1}", value=1.0, minimum=-3.0, maximum=3.0, step=0.05, visible=True)
                             weight_unet = gr.Slider(
-                                label=f"UNet Weight {i+1}", value=1.0, minimum=-3.0, maximum=3.0, step=0.05, visible=False
+                                label=f"3x UNet Weight {i+1}", value=1.0, minimum=-3.0, maximum=3.0, step=0.05, visible=False
                             )
                             weight_tenc = gr.Slider(
-                                label=f"TEnc Weight {i+1}", value=1.0, minimum=-3.0, maximum=3.0, step=0.05, visible=False
+                                label=f"3x TEnc Weight {i+1}", value=1.0, minimum=-3.0, maximum=3.0, step=0.05, visible=False
                             )
 
                         weight.change(lambda w: (w, w), inputs=[weight], outputs=[weight_unet, weight_tenc])
